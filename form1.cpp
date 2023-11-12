@@ -190,9 +190,9 @@ wxIcon Form1::GetIconResource(const wxString& name)
 void Form1::OnNext(wxCommandEvent& event)
 {
 	dt = ((wxTextCtrl*)FindWindow(ID_TEXTCTRL_PASSWORD))->GetValue(); // Запись в открытую переменную
-
 	if (dt != "TSN") {
-		wxMessageBox("Введите правильное имя: TSN !", "Ошибка", wxOK | wxICON_ERROR);
+		wxMessageBox(wxString("Введите правильное имя: TSN !", wxCSConv("cp1251")),
+			wxString("Ошибка", wxCSConv("cp1251")), wxOK | wxICON_ERROR);
 		return;
 	}
 	Form2* window = new Form2(this); // Создание окна 2
