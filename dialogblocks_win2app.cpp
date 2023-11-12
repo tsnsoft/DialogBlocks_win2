@@ -20,6 +20,8 @@
 #include "wx/wx.h"
 #endif
 
+#include "wx/wxprec.h"
+
 ////@begin includes
 ////@end includes
 

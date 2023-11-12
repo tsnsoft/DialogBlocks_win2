@@ -10,7 +10,7 @@
     <bool name="archive_image_files">1</bool>
     <bool name="archive_xrc_files">1</bool>
     <string name="author">""</string>
-    <string name="configuration">"Release"</string>
+    <string name="configuration">"Debug"</string>
     <string name="copyright_string">""</string>
     <string name="cpp_function_declaration_comment">"	/// %BODY%
 "</string>
@@ -433,14 +433,14 @@
           <bool name="proxy-Dialog units">0</bool>
           <bool name="proxy-Enabled">1</bool>
           <string name="proxy-Event sources">""</string>
-          <bool name="proxy-Fit to content">0</bool>
+          <bool name="proxy-Fit to content">1</bool>
           <string name="proxy-Font">"10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, Tahoma"</string>
           <string name="proxy-Foreground colour">""</string>
           <string name="proxy-Header filename">"form1.h"</string>
           <long name="proxy-Height">160</long>
           <string name="proxy-Help text">""</string>
           <bool name="proxy-Hidden">0</bool>
-          <string name="proxy-Icon">"MAIN_ICON"</string>
+          <string name="proxy-Icon">"tsnsoft"</string>
           <string name="proxy-Id name">"ID_FORM1"</string>
           <long name="proxy-Id value">10000</long>
           <string name="proxy-Implementation filename">"form1.cpp"</string>
@@ -496,13 +496,21 @@
             <long name="is-transient">0</long>
             <long name="locked">0</long>
             <long name="owns-file">1</long>
+            <string name="proxy-AlignH">"Centre"</string>
+            <string name="proxy-AlignV">"Centre"</string>
+            <long name="proxy-Border">5</long>
             <string name="proxy-Member variable name">""</string>
             <string name="proxy-Orientation">"Vertical"</string>
             <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+            <long name="proxy-Stretch factor">0</long>
             <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+            <bool name="proxy-wxBOTTOM">1</bool>
             <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+            <bool name="proxy-wxLEFT">1</bool>
             <bool name="proxy-wxRESERVE_SPACE_EVEN_IF_HIDDEN">0</bool>
+            <bool name="proxy-wxRIGHT">1</bool>
             <bool name="proxy-wxSHAPED">0</bool>
+            <bool name="proxy-wxTOP">1</bool>
             <string name="title">"wxBoxSizer V"</string>
             <long name="title-mode">0</long>
             <string name="type">"dialog-control-document"</string>
@@ -759,14 +767,14 @@
           <bool name="proxy-Dialog units">0</bool>
           <bool name="proxy-Enabled">1</bool>
           <string name="proxy-Event sources">""</string>
-          <bool name="proxy-Fit to content">0</bool>
+          <bool name="proxy-Fit to content">1</bool>
           <string name="proxy-Font">""</string>
           <string name="proxy-Foreground colour">""</string>
           <string name="proxy-Header filename">"form2.h"</string>
           <long name="proxy-Height">360</long>
           <string name="proxy-Help text">""</string>
           <bool name="proxy-Hidden">0</bool>
-          <string name="proxy-Icon">"MAIN_ICON"</string>
+          <string name="proxy-Icon">"tsnsoft"</string>
           <string name="proxy-Id name">"ID_FORM2"</string>
           <long name="proxy-Id value">10000</long>
           <string name="proxy-Implementation filename">"form2.cpp"</string>
@@ -821,21 +829,13 @@
             <long name="is-transient">0</long>
             <long name="locked">0</long>
             <long name="owns-file">1</long>
-            <string name="proxy-AlignH">"Centre"</string>
-            <string name="proxy-AlignV">"Centre"</string>
-            <long name="proxy-Border">5</long>
             <string name="proxy-Member variable name">""</string>
             <string name="proxy-Orientation">"Vertical"</string>
             <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
-            <long name="proxy-Stretch factor">0</long>
             <bool name="proxy-wxADJUST_MINSIZE">0</bool>
-            <bool name="proxy-wxBOTTOM">1</bool>
             <bool name="proxy-wxFIXED_MINSIZE">0</bool>
-            <bool name="proxy-wxLEFT">1</bool>
             <bool name="proxy-wxRESERVE_SPACE_EVEN_IF_HIDDEN">0</bool>
-            <bool name="proxy-wxRIGHT">1</bool>
             <bool name="proxy-wxSHAPED">0</bool>
-            <bool name="proxy-wxTOP">1</bool>
             <string name="title">"wxBoxSizer V"</string>
             <long name="title-mode">0</long>
             <string name="type">"dialog-control-document"</string>
@@ -865,8 +865,8 @@
               <string name="proxy-Data variable">""</string>
               <bool name="proxy-Enabled">1</bool>
               <bool name="proxy-External implementation">1</bool>
-              <string name="proxy-Font">"12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, Tahoma"</string>
-              <string name="proxy-Foreground colour">"FBF8CE"</string>
+              <string name="proxy-Font">"14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, Tahoma"</string>
+              <string name="proxy-Foreground colour">"FF0000"</string>
               <string name="proxy-Header filename">""</string>
               <long name="proxy-Height">-1</long>
               <string name="proxy-Help text">""</string>
@@ -923,7 +923,7 @@
               <string name="proxy-AlignV">"Centre"</string>
               <string name="proxy-Background colour">""</string>
               <string name="proxy-Base class">"wxStaticBitmap"</string>
-              <string name="proxy-Bitmap">"WX"</string>
+              <string name="proxy-Bitmap">"wxwidgets"</string>
               <long name="proxy-Border">5</long>
               <string name="proxy-Class">"wxStaticBitmap"</string>
               <string name="proxy-Custom arguments">""</string>
@@ -1202,6 +1202,18 @@
           <long name="title-mode">1</long>
           <long name="locked">0</long>
           <string name="created">"10/11/2023"</string>
+          <string name="language">""</string>
+        </document>
+        <document>
+          <string name="title">"makefile.vc"</string>
+          <string name="type">"source-editor-document"</string>
+          <string name="filename">"makefile.vc"</string>
+          <string name="icon-name">"source-editor"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">1</long>
+          <long name="locked">0</long>
+          <string name="created">"12/11/2023"</string>
           <string name="language">""</string>
         </document>
       </document>
