@@ -1,9 +1,9 @@
-/////////////////////////////////////////////////////////////////////////////
+Ôªø/////////////////////////////////////////////////////////////////////////////
 // Name:        form2.cpp
 // Purpose:     
 // Author:      TSN
 // Modified by: 
-// Created:     10/11/2023 18:57:38
+// Created:     13/11/2023 10:19:03
 // RCS-ID:      
 // Copyright:   
 // Licence:     
@@ -11,9 +11,6 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
-#include "tsnsoft.xpm" // ËÍÓÌÍ‡
-#include "wxwidgets.xpm" // Í‡ÚËÌÍ‡
 
 #ifdef __BORLANDC__
 #pragma hdrstop
@@ -30,6 +27,8 @@
 #include "form1.h"
 
 ////@begin XPM images
+#include "tsnsoft.xpm"
+#include "wxwidgets.xpm"
 ////@end XPM images
 
 
@@ -37,39 +36,39 @@
  * Form2 type definition
  */
 
-IMPLEMENT_CLASS(Form2, wxFrame)
+IMPLEMENT_CLASS( Form2, wxFrame )
 
 
 /*
  * Form2 event table definition
  */
 
-	BEGIN_EVENT_TABLE(Form2, wxFrame)
+BEGIN_EVENT_TABLE( Form2, wxFrame )
 
-	////@begin Form2 event table entries
-	EVT_CLOSE(Form2::OnCloseWindow)
-	EVT_BUTTON(ID_BUTTON_NEXT, Form2::OnBack)
-	EVT_BUTTON(ID_BUTTON_EXIT, Form2::OnExit)
-	////@end Form2 event table entries
+////@begin Form2 event table entries
+    EVT_CLOSE( Form2::OnCloseWindow )
+    EVT_BUTTON( ID_BUTTON_NEXT, Form2::OnBack )
+    EVT_BUTTON( ID_BUTTON_EXIT, Form2::OnExit )
+////@end Form2 event table entries
 
-	EVT_SHOW(Form2::OnShow) // —Ó·˚ÚËÂ ÔÓÍ‡Á‡ ÓÍÌ‡ (—¿Ã» ƒŒ¡¿¬»À» ¡≈«  ŒÕ—“–” “Œ–¿)
+    EVT_SHOW(Form2::OnShow) // –°–æ–±—ã—Ç–∏–µ –ø–æ–∫–∞–∑–∞ –æ–∫–Ω–∞ (–°–ê–ú–ò –î–û–ë–ê–í–ò–õ–ò –ë–ï–ó –ö–û–ù–°–¢–†–£–ö–¢–û–†–ê)
 
-	END_EVENT_TABLE()
+END_EVENT_TABLE()
 
 
-	/*
-	 * Form2 constructors
-	 */
+/*
+ * Form2 constructors
+ */
 
-	Form2::Form2()
+Form2::Form2()
 {
-	Init();
+    Init();
 }
 
-Form2::Form2(wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style)
+Form2::Form2( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
-	Init();
-	Create(parent, id, caption, pos, size, style);
+    Init();
+    Create( parent, id, caption, pos, size, style );
 }
 
 
@@ -77,20 +76,20 @@ Form2::Form2(wxWindow* parent, wxWindowID id, const wxString& caption, const wxP
  * Form2 creator
  */
 
-bool Form2::Create(wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style)
+bool Form2::Create( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
-	////@begin Form2 creation
-	wxFrame::Create(parent, id, caption, pos, size, style);
+////@begin Form2 creation
+    wxFrame::Create( parent, id, caption, pos, size, style );
 
-	CreateControls();
-	SetIcon(GetIconResource(wxT("tsnsoft")));
-	if (GetSizer())
-	{
-		GetSizer()->SetSizeHints(this);
-	}
-	Centre();
-	////@end Form2 creation
-	return true;
+    CreateControls();
+    SetIcon(GetIconResource(wxT("tsnsoft.xpm")));
+    if (GetSizer())
+    {
+        GetSizer()->SetSizeHints(this);
+    }
+    Centre();
+////@end Form2 creation
+    return true;
 }
 
 
@@ -100,8 +99,8 @@ bool Form2::Create(wxWindow* parent, wxWindowID id, const wxString& caption, con
 
 Form2::~Form2()
 {
-	////@begin Form2 destruction
-	////@end Form2 destruction
+////@begin Form2 destruction
+////@end Form2 destruction
 }
 
 
@@ -111,8 +110,8 @@ Form2::~Form2()
 
 void Form2::Init()
 {
-	////@begin Form2 member initialisation
-	////@end Form2 member initialisation
+////@begin Form2 member initialisation
+////@end Form2 member initialisation
 }
 
 
@@ -121,34 +120,34 @@ void Form2::Init()
  */
 
 void Form2::CreateControls()
-{
-	////@begin Form2 content construction
-	Form2* itemFrame1 = this;
+{    
+////@begin Form2 content construction
+    Form2* itemFrame1 = this;
 
-	wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
-	itemFrame1->SetSizer(itemBoxSizer1);
+    wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
+    itemFrame1->SetSizer(itemBoxSizer1);
 
-	wxStaticText* itemStaticText1 = new wxStaticText(itemFrame1, wxID_STATIC_PASSWORD, _("Password"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
-	itemStaticText1->SetForegroundColour(wxColour(255, 0, 0));
-	itemStaticText1->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
-	itemBoxSizer1->Add(itemStaticText1, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    wxStaticText* itemStaticText1 = new wxStaticText( itemFrame1, wxID_STATIC_PASSWORD, wxT("Password"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
+    itemStaticText1->SetForegroundColour(wxColour(255, 0, 0));
+    itemStaticText1->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    itemBoxSizer1->Add(itemStaticText1, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxStaticBitmap* itemStaticBitmap1 = new wxStaticBitmap(itemFrame1, wxID_STATIC, itemFrame1->GetBitmapResource(wxT("wxwidgets")), wxDefaultPosition, wxSize(292, 226), 0);
-	itemBoxSizer1->Add(itemStaticBitmap1, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    wxStaticBitmap* itemStaticBitmap1 = new wxStaticBitmap( itemFrame1, wxID_STATIC, itemFrame1->GetBitmapResource(wxT("wxwidgets.xpm")), wxDefaultPosition, wxSize(292, 226), 0 );
+    itemBoxSizer1->Add(itemStaticBitmap1, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
-	itemBoxSizer1->Add(itemBoxSizer2, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer1->Add(itemBoxSizer2, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxButton* itemButton3 = new wxButton(itemFrame1, ID_BUTTON_NEXT, wxGetTranslation(wxString() + (wxChar)0x041D + (wxChar)0x0430 + (wxChar)0x0437 + (wxChar)0x0430 + (wxChar)0x0434), wxDefaultPosition, wxDefaultSize, 0);
-	itemBoxSizer2->Add(itemButton3, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    wxButton* itemButton3 = new wxButton( itemFrame1, ID_BUTTON_NEXT, wxT("–ù–∞–∑–∞–¥"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer2->Add(itemButton3, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-	itemBoxSizer2->Add(150, 5, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    itemBoxSizer2->Add(150, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-	wxButton* itemButton5 = new wxButton(itemFrame1, ID_BUTTON_EXIT, wxGetTranslation(wxString() + (wxChar)0x0412 + (wxChar)0x044B + (wxChar)0x0445 + (wxChar)0x043E + (wxChar)0x0434), wxDefaultPosition, wxDefaultSize, 0);
-	itemButton5->SetDefault();
-	itemBoxSizer2->Add(itemButton5, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    wxButton* itemButton5 = new wxButton( itemFrame1, ID_BUTTON_EXIT, wxT("–í—ã—Ö–æ–¥"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton5->SetDefault();
+    itemBoxSizer2->Add(itemButton5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-	////@end Form2 content construction
+////@end Form2 content construction
 }
 
 
@@ -158,48 +157,53 @@ void Form2::CreateControls()
 
 bool Form2::ShowToolTips()
 {
-	return true;
+    return true;
 }
 
 /*
  * Get bitmap resources
  */
 
-wxBitmap Form2::GetBitmapResource(const wxString& name)
+wxBitmap Form2::GetBitmapResource( const wxString& name )
 {
-	wxUnusedVar(name);
-	if (name == wxT("wxwidgets"))
-	{
-		wxBitmap bitmap(wxwidgets_xpm);
-		return bitmap;
-	}
-	return wxNullBitmap;
+    // Bitmap retrieval
+////@begin Form2 bitmap retrieval
+    wxUnusedVar(name);
+    if (name == wxT("wxwidgets.xpm"))
+    {
+        wxBitmap bitmap(wxwidgets_xpm);
+        return bitmap;
+    }
+    return wxNullBitmap;
+////@end Form2 bitmap retrieval
 }
 
 /*
  * Get icon resources
  */
 
-wxIcon Form2::GetIconResource(const wxString& name)
+wxIcon Form2::GetIconResource( const wxString& name )
 {
-	// Icon retrieval
-	wxUnusedVar(name);
-	if (name == wxT("tsnsoft"))
-	{
-		wxIcon icon(tsnsoft_xpm);
-		return icon;
-	}
-	return wxNullIcon;
+    // Icon retrieval
+////@begin Form2 icon retrieval
+    wxUnusedVar(name);
+    if (name == wxT("tsnsoft.xpm"))
+    {
+        wxIcon icon(tsnsoft_xpm);
+        return icon;
+    }
+    return wxNullIcon;
+////@end Form2 icon retrieval
 }
 
 
-// —Ó·˚ÚËÂ ÔÓÍ‡Á‡ ÓÍÌ‡ (—¿Ã» —ﬁƒ¿ ƒŒ¡¿¬»À», Õ≈  ŒÕ—“–” “Œ–)
+// –°–æ–±—ã—Ç–∏–µ –ø–æ–∫–∞–∑–∞ –æ–∫–Ω–∞ (–°–ê–ú–ò –°–Æ–î–ê –î–û–ë–ê–í–ò–õ–ò, –ù–ï –ö–û–ù–°–¢–†–£–ö–¢–û–†)
 void Form2::OnShow(wxShowEvent& event)
 {
-	wxWindow* window = this; // œÓÎÛ˜ÂÌËÂ ÛÍ‡Á‡ÚÂÎˇ Ì‡ ÚÂÍÛ˘ÂÂ ÓÍÌÓ
-	Form1* mainWindow = (Form1*)window->GetParent(); // œÓÎÛ˜ÂÌËÂ ÛÍ‡Á‡ÚÂÎˇ Ì‡ Ó‰ËÚÂÎ¸ÒÍÓÂ ÓÍÌÓ
-	wxString ss = mainWindow->GetDt(); // œÓÎÛ˜ÂÌËÂ ÁÌ‡˜ÂÌËˇ ÔÂÂÏÂÌÌÓÈ ËÁ Ó‰ËÚÂÎ¸ÒÍÓ„Ó ÓÍÌ‡
-	((wxStaticText*)FindWindow(wxID_STATIC_PASSWORD))->SetLabel(ss); // ”ÒÚ‡ÌÓ‚Í‡ ÁÌ‡˜ÂÌËˇ ÔÂÂÏÂÌÌÓÈ ‚ ÚÂÍÒÚÓ‚ÓÂ ÔÓÎÂ
+	wxWindow* window = this; // –ü–æ–ª—É—á–µ–Ω–∏–µ —É–∫–∞–∑–∞—Ç–µ–ª—è –Ω–∞ —Ç–µ–∫—É—â–µ–µ –æ–∫–Ω–æ
+	Form1* mainWindow = (Form1*)window->GetParent(); // –ü–æ–ª—É—á–µ–Ω–∏–µ —É–∫–∞–∑–∞—Ç–µ–ª—è –Ω–∞ —Ä–æ–¥–∏—Ç–µ–ª—å—Å–∫–æ–µ –æ–∫–Ω–æ
+	wxString ss = mainWindow->GetDt(); // –ü–æ–ª—É—á–µ–Ω–∏–µ –∑–Ω–∞—á–µ–Ω–∏—è –ø–µ—Ä–µ–º–µ–Ω–Ω–æ–π –∏–∑ —Ä–æ–¥–∏—Ç–µ–ª—å—Å–∫–æ–≥–æ –æ–∫–Ω–∞
+	((wxStaticText*)FindWindow(wxID_STATIC_PASSWORD))->SetLabel(ss); // –£—Å—Ç–∞–Ω–æ–≤–∫–∞ –∑–Ω–∞—á–µ–Ω–∏—è –ø–µ—Ä–µ–º–µ–Ω–Ω–æ–π –≤ —Ç–µ–∫—Å—Ç–æ–≤–æ–µ –ø–æ–ª–µ
 }
 
 
@@ -207,11 +211,11 @@ void Form2::OnShow(wxShowEvent& event)
  * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1
  */
 
- //  ÌÓÔÍ‡ Ì‡Á‡‰
+ // –ö–Ω–æ–ø–∫–∞ –Ω–∞–∑–∞–¥
 void Form2::OnBack(wxCommandEvent& event)
 {
-	Destroy(); // ”ÌË˜ÚÓÊÂÌËÂ ÓÍÌ‡
-	this->GetParent()->Show(true); // œÓÍ‡Á Ó‰ËÚÂÎ¸ÒÍÓ„Ó ÓÒÌÓ‚ÌÓ„Ó ÓÍÌ‡
+	Destroy(); // –£–Ω–∏—á—Ç–æ–∂–µ–Ω–∏–µ –æ–∫–Ω–∞
+	this->GetParent()->Show(true); // –ü–æ–∫–∞–∑ —Ä–æ–¥–∏—Ç–µ–ª—å—Å–∫–æ–≥–æ –æ—Å–Ω–æ–≤–Ω–æ–≥–æ –æ–∫–Ω–∞
 }
 
 
@@ -219,12 +223,12 @@ void Form2::OnBack(wxCommandEvent& event)
  * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
  */
 
- //  ÌÓÔÍ‡ ‚˚ıÓ‰‡
+ // –ö–Ω–æ–ø–∫–∞ –≤—ã—Ö–æ–¥–∞
 void Form2::OnExit(wxCommandEvent& event)
 {
-	wxWindow* window = this; // œÓÎÛ˜ÂÌËÂ ÛÍ‡Á‡ÚÂÎˇ Ì‡ ÚÂÍÛ˘ÂÂ ÓÍÌÓ
-	window->Destroy(); // ”ÌË˜ÚÓÊÂÌËÂ ÓÍÌ‡
-	this->GetParent()->Destroy(); // ”ÌË˜ÚÓÊÂÌËÂ Ó‰ËÚÂÎ¸ÒÍÓ„Ó ÓÒÌÓ‚ÌÓ„Ó ÓÍÌ‡ (Á‡Í˚ÚËÂ ÔÓ„‡ÏÏ˚)
+	wxWindow* window = this; // –ü–æ–ª—É—á–µ–Ω–∏–µ —É–∫–∞–∑–∞—Ç–µ–ª—è –Ω–∞ —Ç–µ–∫—É—â–µ–µ –æ–∫–Ω–æ
+	window->Destroy(); // –£–Ω–∏—á—Ç–æ–∂–µ–Ω–∏–µ –æ–∫–Ω–∞
+	this->GetParent()->Destroy(); // –£–Ω–∏—á—Ç–æ–∂–µ–Ω–∏–µ —Ä–æ–¥–∏—Ç–µ–ª—å—Å–∫–æ–≥–æ –æ—Å–Ω–æ–≤–Ω–æ–≥–æ –æ–∫–Ω–∞ (–∑–∞–∫—Ä—ã—Ç–∏–µ –ø—Ä–æ–≥—Ä–∞–º–º—ã)
 
 }
 
@@ -233,11 +237,11 @@ void Form2::OnExit(wxCommandEvent& event)
  * wxEVT_CLOSE_WINDOW event handler for ID_FORM2
  */
 
- // «‡Í˚ÚËÂ ÓÍÌ‡
+ // –ó–∞–∫—Ä—ã—Ç–∏–µ –æ–∫–Ω–∞
 void Form2::OnCloseWindow(wxCloseEvent& event)
 {
-	wxWindow* window = this; // œÓÎÛ˜ÂÌËÂ ÛÍ‡Á‡ÚÂÎˇ Ì‡ ÚÂÍÛ˘ÂÂ ÓÍÌÓ
-	window->Destroy(); // ”ÌË˜ÚÓÊÂÌËÂ ÓÍÌ‡
-	this->GetParent()->Destroy(); // ”ÌË˜ÚÓÊÂÌËÂ Ó‰ËÚÂÎ¸ÒÍÓ„Ó ÓÒÌÓ‚ÌÓ„Ó ÓÍÌ‡ (Á‡Í˚ÚËÂ ÔÓ„‡ÏÏ˚)
+	wxWindow* window = this; // –ü–æ–ª—É—á–µ–Ω–∏–µ —É–∫–∞–∑–∞—Ç–µ–ª—è –Ω–∞ —Ç–µ–∫—É—â–µ–µ –æ–∫–Ω–æ
+	window->Destroy(); // –£–Ω–∏—á—Ç–æ–∂–µ–Ω–∏–µ –æ–∫–Ω–∞
+	this->GetParent()->Destroy(); // –£–Ω–∏—á—Ç–æ–∂–µ–Ω–∏–µ —Ä–æ–¥–∏—Ç–µ–ª—å—Å–∫–æ–≥–æ –æ—Å–Ω–æ–≤–Ω–æ–≥–æ –æ–∫–Ω–∞ (–∑–∞–∫—Ä—ã—Ç–∏–µ –ø—Ä–æ–≥—Ä–∞–º–º—ã)
 }
 

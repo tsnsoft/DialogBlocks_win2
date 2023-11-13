@@ -81,7 +81,7 @@
     <long name="image_mode">0</long>
     <long name="indent_size">4</long>
     <bool name="inline_images">0</bool>
-    <bool name="make_unicode_strings">1</bool>
+    <bool name="make_unicode_strings">0</bool>
     <long name="name_counter">0</long>
     <string name="project_encoding">"utf-8"</string>
     <string name="resource_archive">""</string>
@@ -90,11 +90,11 @@
     <string name="resource_file_implementation">"app_resources.cpp"</string>
     <string name="resource_prefix">""</string>
     <string name="resource_xrc_cpp">""</string>
-    <string name="source_encoding">"windows-1251"</string>
+    <string name="source_encoding">"utf-8"</string>
     <string name="target_wx_version">"3.2.3"</string>
     <long name="text_file_type">0</long>
     <string name="title">""</string>
-    <bool name="translate_strings">1</bool>
+    <bool name="translate_strings">0</bool>
     <bool name="use_enums">0</bool>
     <bool name="use_generated_xrc_cpp">0</bool>
     <bool name="use_help_text_for_tooltips">1</bool>
@@ -440,7 +440,7 @@
           <long name="proxy-Height">160</long>
           <string name="proxy-Help text">""</string>
           <bool name="proxy-Hidden">0</bool>
-          <string name="proxy-Icon">"tsnsoft"</string>
+          <string name="proxy-Icon">"tsnsoft.xpm"</string>
           <string name="proxy-Id name">"ID_FORM1"</string>
           <long name="proxy-Id value">10000</long>
           <string name="proxy-Implementation filename">"form1.cpp"</string>
@@ -766,7 +766,7 @@
           <long name="proxy-Height">360</long>
           <string name="proxy-Help text">""</string>
           <bool name="proxy-Hidden">0</bool>
-          <string name="proxy-Icon">"tsnsoft"</string>
+          <string name="proxy-Icon">"tsnsoft.xpm"</string>
           <string name="proxy-Id name">"ID_FORM2"</string>
           <long name="proxy-Id value">10000</long>
           <string name="proxy-Implementation filename">"form2.cpp"</string>
@@ -821,21 +821,13 @@
             <long name="is-transient">0</long>
             <long name="locked">0</long>
             <long name="owns-file">1</long>
-            <string name="proxy-AlignH">"Centre"</string>
-            <string name="proxy-AlignV">"Centre"</string>
-            <long name="proxy-Border">5</long>
             <string name="proxy-Member variable name">""</string>
             <string name="proxy-Orientation">"Vertical"</string>
             <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
-            <long name="proxy-Stretch factor">0</long>
             <bool name="proxy-wxADJUST_MINSIZE">0</bool>
-            <bool name="proxy-wxBOTTOM">1</bool>
             <bool name="proxy-wxFIXED_MINSIZE">0</bool>
-            <bool name="proxy-wxLEFT">1</bool>
             <bool name="proxy-wxRESERVE_SPACE_EVEN_IF_HIDDEN">0</bool>
-            <bool name="proxy-wxRIGHT">1</bool>
             <bool name="proxy-wxSHAPED">0</bool>
-            <bool name="proxy-wxTOP">1</bool>
             <string name="title">"wxBoxSizer V"</string>
             <long name="title-mode">0</long>
             <string name="type">"dialog-control-document"</string>
@@ -923,7 +915,7 @@
               <string name="proxy-AlignV">"Centre"</string>
               <string name="proxy-Background colour">""</string>
               <string name="proxy-Base class">"wxStaticBitmap"</string>
-              <string name="proxy-Bitmap">"wxwidgets"</string>
+              <string name="proxy-Bitmap">"wxwidgets.xpm"</string>
               <long name="proxy-Border">5</long>
               <string name="proxy-Class">"wxStaticBitmap"</string>
               <string name="proxy-Custom arguments">""</string>
@@ -1181,18 +1173,6 @@
         <long name="title-mode">0</long>
         <long name="locked">1</long>
         <document>
-          <string name="title">"DialogBlocks_win2.rc"</string>
-          <string name="type">"source-editor-document"</string>
-          <string name="filename">"DialogBlocks_win2.rc"</string>
-          <string name="icon-name">"source-editor"</string>
-          <long name="is-transient">0</long>
-          <long name="owns-file">0</long>
-          <long name="title-mode">1</long>
-          <long name="locked">0</long>
-          <string name="created">"10/11/2023"</string>
-          <string name="language">""</string>
-        </document>
-        <document>
           <string name="title">"DialogBlocks_win2.vcxproj"</string>
           <string name="type">"source-editor-document"</string>
           <string name="filename">"DialogBlocks_win2.vcxproj"</string>
@@ -1202,18 +1182,6 @@
           <long name="title-mode">1</long>
           <long name="locked">0</long>
           <string name="created">"10/11/2023"</string>
-          <string name="language">""</string>
-        </document>
-        <document>
-          <string name="title">"makefile.vc"</string>
-          <string name="type">"source-editor-document"</string>
-          <string name="filename">"makefile.vc"</string>
-          <string name="icon-name">"source-editor"</string>
-          <long name="is-transient">0</long>
-          <long name="owns-file">0</long>
-          <long name="title-mode">1</long>
-          <long name="locked">0</long>
-          <string name="created">"12/11/2023"</string>
           <string name="language">""</string>
         </document>
       </document>
@@ -1226,6 +1194,28 @@
         <long name="owns-file">1</long>
         <long name="title-mode">0</long>
         <long name="locked">1</long>
+        <document>
+          <string name="title">"tsnsoft.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"tsnsoft.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wxwidgets.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"wxwidgets.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <long name="zoom-level">100</long>
+        </document>
       </document>
     </document>
   </documents>

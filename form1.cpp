@@ -1,9 +1,9 @@
-/////////////////////////////////////////////////////////////////////////////
+п»ї/////////////////////////////////////////////////////////////////////////////
 // Name:        form1.cpp
 // Purpose:     
 // Author:      TSN
 // Modified by: 
-// Created:     10/11/2023 18:42:20
+// Created:     13/11/2023 10:18:57
 // RCS-ID:      
 // Copyright:   
 // Licence:     
@@ -11,8 +11,6 @@
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
-
-#include "tsnsoft.xpm" // иконка
 
 #ifdef __BORLANDC__
 #pragma hdrstop
@@ -29,6 +27,7 @@
 #include "form1.h"
 
 ////@begin XPM images
+#include "tsnsoft.xpm"
 ////@end XPM images
 
 
@@ -36,36 +35,35 @@
  * Form1 type definition
  */
 
-IMPLEMENT_CLASS(Form1, wxFrame)
+IMPLEMENT_CLASS( Form1, wxFrame )
 
 
 /*
  * Form1 event table definition
  */
 
-	BEGIN_EVENT_TABLE(Form1, wxFrame)
+BEGIN_EVENT_TABLE( Form1, wxFrame )
 
-	////@begin Form1 event table entries
-	EVT_BUTTON(ID_BUTTON, Form1::OnNext)
-	////@end Form1 event table entries
+////@begin Form1 event table entries
+    EVT_BUTTON( ID_BUTTON, Form1::OnNext )
+////@end Form1 event table entries
 
-	END_EVENT_TABLE()
-
-
-	/*
-	 * Form1 constructors
-	 */
+END_EVENT_TABLE()
 
 
-	Form1::Form1()
+/*
+ * Form1 constructors
+ */
+
+Form1::Form1()
 {
-	Init();
+    Init();
 }
 
-Form1::Form1(wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style)
+Form1::Form1( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
-	Init();
-	Create(parent, id, caption, pos, size, style);
+    Init();
+    Create( parent, id, caption, pos, size, style );
 }
 
 
@@ -73,21 +71,21 @@ Form1::Form1(wxWindow* parent, wxWindowID id, const wxString& caption, const wxP
  * Form1 creator
  */
 
-bool Form1::Create(wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style)
+bool Form1::Create( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
-	////@begin Form1 creation
-	wxFrame::Create(parent, id, caption, pos, size, style);
+////@begin Form1 creation
+    wxFrame::Create( parent, id, caption, pos, size, style );
 
-	this->SetFont(wxFont(10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
-	CreateControls();
-	SetIcon(GetIconResource(wxT("tsnsoft")));
-	if (GetSizer())
-	{
-		GetSizer()->SetSizeHints(this);
-	}
-	Centre();
-	////@end Form1 creation
-	return true;
+    this->SetFont(wxFont(10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    CreateControls();
+    SetIcon(GetIconResource(wxT("tsnsoft.xpm")));
+    if (GetSizer())
+    {
+        GetSizer()->SetSizeHints(this);
+    }
+    Centre();
+////@end Form1 creation
+    return true;
 }
 
 
@@ -97,8 +95,8 @@ bool Form1::Create(wxWindow* parent, wxWindowID id, const wxString& caption, con
 
 Form1::~Form1()
 {
-	////@begin Form1 destruction
-	////@end Form1 destruction
+////@begin Form1 destruction
+////@end Form1 destruction
 }
 
 
@@ -108,9 +106,9 @@ Form1::~Form1()
 
 void Form1::Init()
 {
-	////@begin Form1 member initialisation
-	dt = "???";
-	////@end Form1 member initialisation
+////@begin Form1 member initialisation
+    dt = "???";
+////@end Form1 member initialisation
 }
 
 
@@ -119,27 +117,45 @@ void Form1::Init()
  */
 
 void Form1::CreateControls()
+{    
+////@begin Form1 content construction
+    Form1* itemFrame1 = this;
+
+    wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
+    itemFrame1->SetSizer(itemBoxSizer1);
+
+    wxStaticText* itemStaticText2 = new wxStaticText( itemFrame1, wxID_STATIC, wxT("Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText2->SetForegroundColour(wxColour(255, 0, 0));
+    itemStaticText2->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    itemBoxSizer1->Add(itemStaticText2, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxTextCtrl* itemTextCtrl3 = new wxTextCtrl( itemFrame1, ID_TEXTCTRL_PASSWORD, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD );
+    itemTextCtrl3->SetFont(wxFont(12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    itemBoxSizer1->Add(itemTextCtrl3, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxButton* itemButton1 = new wxButton( itemFrame1, ID_BUTTON, wxT("Р’РѕР№С‚Рё"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton1->SetDefault();
+    itemBoxSizer1->Add(itemButton1, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+////@end Form1 content construction
+}
+
+
+/*
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
+ */
+
+void Form1::OnNext( wxCommandEvent& event )
 {
-	////@begin Form1 content construction
-	Form1* itemFrame1 = this;
-
-	wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
-	itemFrame1->SetSizer(itemBoxSizer1);
-
-	wxStaticText* itemStaticText2 = new wxStaticText(itemFrame1, wxID_STATIC, wxGetTranslation(wxString() + (wxChar)0x0412 + (wxChar)0x0432 + (wxChar)0x0435 + (wxChar)0x0434 + (wxChar)0x0438 + (wxChar)0x0442 + (wxChar)0x0435 + wxT(" ") + (wxChar)0x043F + (wxChar)0x0430 + (wxChar)0x0440 + (wxChar)0x043E + (wxChar)0x043B + (wxChar)0x044C + wxT(":")), wxDefaultPosition, wxDefaultSize, 0);
-	itemStaticText2->SetForegroundColour(wxColour(255, 0, 0));
-	itemStaticText2->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
-	itemBoxSizer1->Add(itemStaticText2, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-
-	wxTextCtrl* itemTextCtrl3 = new wxTextCtrl(itemFrame1, ID_TEXTCTRL_PASSWORD, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
-	itemTextCtrl3->SetFont(wxFont(12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
-	itemBoxSizer1->Add(itemTextCtrl3, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-
-	wxButton* itemButton1 = new wxButton(itemFrame1, ID_BUTTON, wxGetTranslation(wxString() + (wxChar)0x0412 + (wxChar)0x043E + (wxChar)0x0439 + (wxChar)0x0442 + (wxChar)0x0438), wxDefaultPosition, wxDefaultSize, 0);
-	itemButton1->SetDefault();
-	itemBoxSizer1->Add(itemButton1, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-
-	////@end Form1 content construction
+	dt = ((wxTextCtrl*)FindWindow(ID_TEXTCTRL_PASSWORD))->GetValue(); // Р—Р°РїРёСЃСЊ РІ РѕС‚РєСЂС‹С‚СѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ
+	if (dt != "TSN") {
+		wxMessageBox(wxString("Р’РІРµРґРёС‚Рµ РїСЂР°РІРёР»СЊРЅРѕРµ РёРјСЏ: TSN !", wxCSConv("cp1251")),
+			wxString("РћС€РёР±РєР°", wxCSConv("cp1251")), wxOK | wxICON_ERROR);
+		return;
+	}
+	Form2* window = new Form2(this); // РЎРѕР·РґР°РЅРёРµ РѕРєРЅР° 2
+	window->Show(true); // РџРѕРєР°Р· РѕРєРЅР° 2
+	Hide(); // РЎРєСЂС‹С‚РёРµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕРєРЅР°
 }
 
 
@@ -149,54 +165,36 @@ void Form1::CreateControls()
 
 bool Form1::ShowToolTips()
 {
-	return true;
+    return true;
 }
 
 /*
  * Get bitmap resources
  */
 
-wxBitmap Form1::GetBitmapResource(const wxString& name)
+wxBitmap Form1::GetBitmapResource( const wxString& name )
 {
-	// Bitmap retrieval
+    // Bitmap retrieval
 ////@begin Form1 bitmap retrieval
-	wxUnusedVar(name);
-	return wxNullBitmap;
-	////@end Form1 bitmap retrieval
+    wxUnusedVar(name);
+    return wxNullBitmap;
+////@end Form1 bitmap retrieval
 }
 
 /*
  * Get icon resources
  */
 
-wxIcon Form1::GetIconResource(const wxString& name)
+wxIcon Form1::GetIconResource( const wxString& name )
 {
-	// Icon retrieval
-	wxUnusedVar(name);
-	if (name == wxT("tsnsoft"))
-	{
-		wxIcon icon(tsnsoft_xpm);
-		return icon;
-	}
-	return wxNullIcon;
+    // Icon retrieval
+////@begin Form1 icon retrieval
+    wxUnusedVar(name);
+    if (name == wxT("tsnsoft.xpm"))
+    {
+        wxIcon icon(tsnsoft_xpm);
+        return icon;
+    }
+    return wxNullIcon;
+////@end Form1 icon retrieval
 }
-
-
-/*
- * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
- */
-
- // Кнопка входа
-void Form1::OnNext(wxCommandEvent& event)
-{
-	dt = ((wxTextCtrl*)FindWindow(ID_TEXTCTRL_PASSWORD))->GetValue(); // Запись в открытую переменную
-	if (dt != "TSN") {
-		wxMessageBox(wxString("Введите правильное имя: TSN !", wxCSConv("cp1251")),
-			wxString("Ошибка", wxCSConv("cp1251")), wxOK | wxICON_ERROR);
-		return;
-	}
-	Form2* window = new Form2(this); // Создание окна 2
-	window->Show(true); // Показ окна 2
-	Hide(); // Скрытие родительского окна
-}
-
