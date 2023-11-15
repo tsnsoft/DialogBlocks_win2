@@ -58,7 +58,7 @@
 			<WarningLevel>Level4</WarningLevel>
 			<Optimization>Disabled</Optimization>
 			<PreprocessorDefinitions>NOPCH;WIN32;__WXMSW__;_WINDOWS;__WXDEBUG__;_DEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalOptions> /utf-8 %(AdditionalOptions)</AdditionalOptions>
 			<AdditionalIncludeDirectories>D:\Development\CPP\wxWidgetsDBls/lib/vc_lib/mswud;D:\Development\CPP\wxWidgetsDBls/include;D:\Development\CPP\wxWidgetsDBls/contrib/include;C:\Program Files (x86)\Windows Kits\10\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt</AdditionalIncludeDirectories>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 		</ClCompile>
@@ -82,7 +82,7 @@
 			<FunctionLevelLinking>true</FunctionLevelLinking>
 			<IntrinsicFunctions>true</IntrinsicFunctions>
 			<PreprocessorDefinitions>NOPCH;WIN32;__WXMSW__;_WINDOWS;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalOptions> /utf-8 %(AdditionalOptions)</AdditionalOptions>
 			<AdditionalIncludeDirectories>D:\Development\CPP\wxWidgetsDBls/lib/vc_lib/mswu;D:\Development\CPP\wxWidgetsDBls/include;D:\Development\CPP\wxWidgetsDBls/contrib/include;C:\Program Files (x86)\Windows Kits\10\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt</AdditionalIncludeDirectories>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 		</ClCompile>
