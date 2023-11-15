@@ -29,6 +29,8 @@
 
 **Message encoding:** cp866
 
+**Extra compile flags:** %AUTO% /utf-8
+
 ## Ссылки:
 
 http://www.anthemion.co.uk/dialogblocks/
