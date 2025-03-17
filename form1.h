@@ -92,6 +92,7 @@ public:
     static bool ShowToolTips();
 
 ////@begin Form1 member variables
+    wxTextCtrl* m_password;
 public:
     wxString dt; // Общая переменная для хранения пароля
 ////@end Form1 member variables
