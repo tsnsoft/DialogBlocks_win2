@@ -107,7 +107,6 @@ Form1::~Form1()
 void Form1::Init()
 {
 	////@begin Form1 member initialisation
-    dt = "???";
     m_password = NULL;
 	////@end Form1 member initialisation
 }
@@ -148,11 +147,12 @@ void Form1::CreateControls()
 
 void Form1::OnNext(wxCommandEvent& event)
 {
-	dt = m_password->GetValue(); // Запись в открытую переменную
-	if (dt != "TSN") {
+	wxString ss = m_password->GetValue(); // Получаем пароль из поля ввода в переменную ss
+    if (ss != "TSN") {
 		wxMessageBox(wxT("Введите правильное имя: TSN !"), wxT("Ошибка"), wxOK | wxICON_ERROR);
 		return;
 	}
+	wxGetApp().SetDt(ss); // Запись в глобальную открытую переменную dt через метод SetDt()
 	Form2* window = new Form2(this); // Создание окна 2
 	window->Show(true); // Показ окна 2
 	Hide(); // Скрытие родительского окна

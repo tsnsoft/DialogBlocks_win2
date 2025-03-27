@@ -77,6 +77,7 @@ DialogBlocks_win2App::DialogBlocks_win2App()
 void DialogBlocks_win2App::Init()
 {
 ////@begin DialogBlocks_win2App member initialisation
+	dt = "???";
 ////@end DialogBlocks_win2App member initialisation
 }
 

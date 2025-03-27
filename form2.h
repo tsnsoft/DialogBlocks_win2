@@ -31,6 +31,8 @@
 /*!
  * Control identifiers
  */
+ 
+ #include "dialogblocks_win2app.h"
 
 ////@begin control identifiers
 #define ID_FORM2 10000
@@ -97,6 +99,7 @@ public:
     static bool ShowToolTips();
 
 ////@begin Form2 member variables
+    wxStaticText* _password;
 ////@end Form2 member variables
 };
 

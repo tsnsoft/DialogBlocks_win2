@@ -38,6 +38,7 @@
 
 IMPLEMENT_CLASS(Form2, wxFrame)
 
+#include "dialogblocks_win2app.h"
 
 /*
  * Form2 event table definition
@@ -46,9 +47,9 @@ IMPLEMENT_CLASS(Form2, wxFrame)
 	BEGIN_EVENT_TABLE(Form2, wxFrame)
 
 	////@begin Form2 event table entries
-	EVT_CLOSE(Form2::OnCloseWindow)
-	EVT_BUTTON(ID_BUTTON_NEXT, Form2::OnBack)
-	EVT_BUTTON(ID_BUTTON_EXIT, Form2::OnExit)
+    EVT_CLOSE( Form2::OnCloseWindow )
+    EVT_BUTTON( ID_BUTTON_NEXT, Form2::OnBack )
+    EVT_BUTTON( ID_BUTTON_EXIT, Form2::OnExit )
 	////@end Form2 event table entries
 
 	EVT_SHOW(Form2::OnShow) // Событие показа окна (САМИ ДОБАВИЛИ БЕЗ КОНСТРУКТОРА)
@@ -79,15 +80,15 @@ Form2::Form2(wxWindow* parent, wxWindowID id, const wxString& caption, const wxP
 bool Form2::Create(wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style)
 {
 	////@begin Form2 creation
-	wxFrame::Create(parent, id, caption, pos, size, style);
+    wxFrame::Create( parent, id, caption, pos, size, style );
 
-	CreateControls();
-	SetIcon(GetIconResource(wxT("tsnsoft.xpm")));
-	if (GetSizer())
-	{
-		GetSizer()->SetSizeHints(this);
-	}
-	Centre();
+    CreateControls();
+    SetIcon(GetIconResource(wxT("tsnsoft.xpm")));
+    if (GetSizer())
+    {
+        GetSizer()->SetSizeHints(this);
+    }
+    Centre();
 	////@end Form2 creation
 	return true;
 }
@@ -111,6 +112,7 @@ Form2::~Form2()
 void Form2::Init()
 {
 	////@begin Form2 member initialisation
+    _password = NULL;
 	////@end Form2 member initialisation
 }
 
@@ -122,30 +124,30 @@ void Form2::Init()
 void Form2::CreateControls()
 {
 	////@begin Form2 content construction
-	Form2* itemFrame1 = this;
+    Form2* itemFrame1 = this;
 
-	wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
-	itemFrame1->SetSizer(itemBoxSizer1);
+    wxBoxSizer* itemBoxSizer1 = new wxBoxSizer(wxVERTICAL);
+    itemFrame1->SetSizer(itemBoxSizer1);
 
-	wxStaticText* itemStaticText1 = new wxStaticText(itemFrame1, wxID_STATIC_PASSWORD, wxT("Password"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
-	itemStaticText1->SetForegroundColour(wxColour(255, 0, 0));
-	itemStaticText1->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
-	itemBoxSizer1->Add(itemStaticText1, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    _password = new wxStaticText( itemFrame1, wxID_STATIC_PASSWORD, wxT("Password"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
+    _password->SetForegroundColour(wxColour(255, 0, 0));
+    _password->SetFont(wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    itemBoxSizer1->Add(_password, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxStaticBitmap* itemStaticBitmap1 = new wxStaticBitmap(itemFrame1, wxID_STATIC, itemFrame1->GetBitmapResource(wxT("wxwidgets.xpm")), wxDefaultPosition, wxSize(292, 226), 0);
-	itemBoxSizer1->Add(itemStaticBitmap1, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    wxStaticBitmap* itemStaticBitmap1 = new wxStaticBitmap( itemFrame1, wxID_STATIC, itemFrame1->GetBitmapResource(wxT("wxwidgets.xpm")), wxDefaultPosition, wxSize(292, 226), 0 );
+    itemBoxSizer1->Add(itemStaticBitmap1, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
-	itemBoxSizer1->Add(itemBoxSizer2, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+    wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer1->Add(itemBoxSizer2, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-	wxButton* itemButton3 = new wxButton(itemFrame1, ID_BUTTON_NEXT, wxT("Назад"), wxDefaultPosition, wxDefaultSize, 0);
-	itemBoxSizer2->Add(itemButton3, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    wxButton* itemButton3 = new wxButton( itemFrame1, ID_BUTTON_NEXT, wxT("Назад"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer2->Add(itemButton3, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-	itemBoxSizer2->Add(150, 5, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    itemBoxSizer2->Add(150, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-	wxButton* itemButton5 = new wxButton(itemFrame1, ID_BUTTON_EXIT, wxT("Выход"), wxDefaultPosition, wxDefaultSize, 0);
-	itemButton5->SetDefault();
-	itemBoxSizer2->Add(itemButton5, 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    wxButton* itemButton5 = new wxButton( itemFrame1, ID_BUTTON_EXIT, wxT("Выход"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton5->SetDefault();
+    itemBoxSizer2->Add(itemButton5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
 	////@end Form2 content construction
 }
@@ -168,13 +170,13 @@ wxBitmap Form2::GetBitmapResource(const wxString& name)
 {
 	// Bitmap retrieval
 ////@begin Form2 bitmap retrieval
-	wxUnusedVar(name);
-	if (name == wxT("wxwidgets.xpm"))
-	{
-		wxBitmap bitmap(wxwidgets_xpm);
-		return bitmap;
-	}
-	return wxNullBitmap;
+    wxUnusedVar(name);
+    if (name == wxT("wxwidgets.xpm"))
+    {
+        wxBitmap bitmap(wxwidgets_xpm);
+        return bitmap;
+    }
+    return wxNullBitmap;
 	////@end Form2 bitmap retrieval
 }
 
@@ -186,13 +188,13 @@ wxIcon Form2::GetIconResource(const wxString& name)
 {
 	// Icon retrieval
 ////@begin Form2 icon retrieval
-	wxUnusedVar(name);
-	if (name == wxT("tsnsoft.xpm"))
-	{
-		wxIcon icon(tsnsoft_xpm);
-		return icon;
-	}
-	return wxNullIcon;
+    wxUnusedVar(name);
+    if (name == wxT("tsnsoft.xpm"))
+    {
+        wxIcon icon(tsnsoft_xpm);
+        return icon;
+    }
+    return wxNullIcon;
 	////@end Form2 icon retrieval
 }
 
@@ -200,10 +202,8 @@ wxIcon Form2::GetIconResource(const wxString& name)
 // Событие показа окна (САМИ СЮДА ДОБАВИЛИ, НЕ КОНСТРУКТОР)
 void Form2::OnShow(wxShowEvent& event)
 {
-	wxWindow* window = this; // Получение указателя на текущее окно
-	Form1* mainWindow = (Form1*)window->GetParent(); // Получение указателя на родительское окно
-	wxString ss = mainWindow->GetDt(); // Получение значения переменной из родительского окна
-	((wxStaticText*)FindWindow(wxID_STATIC_PASSWORD))->SetLabel(ss); // Установка значения переменной в текстовое поле
+   wxString ss = wxGetApp().GetDt(); // Чтение значения из глобальной открытой переменной dt через метод GetDt()
+   _password->SetLabel(ss); // Установка значения глобальной переменной в текстовое поле
 }
 
 
@@ -214,8 +214,9 @@ void Form2::OnShow(wxShowEvent& event)
  // Кнопка назад
 void Form2::OnBack(wxCommandEvent& event)
 {
-	Destroy(); // Уничтожение окна
-	this->GetParent()->Show(true); // Показ родительского основного окна
+    wxWindow* parent = this -> GetParent();  // Сохраняем указатель на родителя
+    this -> Destroy();  // Уничтожаем текущее окно
+    parent -> Show(true); // Показываем 1 окно
 }
 
 
@@ -226,10 +227,7 @@ void Form2::OnBack(wxCommandEvent& event)
  // Кнопка выхода
 void Form2::OnExit(wxCommandEvent& event)
 {
-	wxWindow* window = this; // Получение указателя на текущее окно
-	window->Destroy(); // Уничтожение окна
-	this->GetParent()->Destroy(); // Уничтожение родительского основного окна (закрытие программы)
-
+    wxGetApp().GetTopWindow()->Close(true); // Закрываем главное окно
 }
 
 
@@ -240,8 +238,8 @@ void Form2::OnExit(wxCommandEvent& event)
  // Закрытие окна
 void Form2::OnCloseWindow(wxCloseEvent& event)
 {
-	wxWindow* window = this; // Получение указателя на текущее окно
-	window->Destroy(); // Уничтожение окна
-	this->GetParent()->Destroy(); // Уничтожение родительского основного окна (закрытие программы)
+    wxWindow* parent = this -> GetParent();  // Сохраняем указатель на родителя
+    this -> Destroy();  // Уничтожаем текущее окно
+    parent -> Show(true); // Показываем 1 окно
 }
 

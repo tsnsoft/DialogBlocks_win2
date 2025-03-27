@@ -63,9 +63,14 @@ public:
 
 ////@begin DialogBlocks_win2App member function declarations
 
+	wxString GetDt() const { return dt ; }
+	void SetDt(wxString value) { dt = value ; }
+
 ////@end DialogBlocks_win2App member function declarations
 
 ////@begin DialogBlocks_win2App member variables
+public:
+	wxString dt;
 ////@end DialogBlocks_win2App member variables
 };
 

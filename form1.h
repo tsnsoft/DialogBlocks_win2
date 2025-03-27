@@ -78,9 +78,6 @@ public:
 
 ////@begin Form1 member function declarations
 
-    wxString GetDt() const { return dt ; }
-    void SetDt(wxString value) { dt = value ; }
-
     /// Retrieves bitmap resources
     wxBitmap GetBitmapResource( const wxString& name );
 
@@ -93,8 +90,6 @@ public:
 
 ////@begin Form1 member variables
     wxTextCtrl* m_password;
-public:
-    wxString dt; // Общая переменная для хранения пароля
 ////@end Form1 member variables
 };
 

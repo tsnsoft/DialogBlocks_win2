@@ -705,6 +705,7 @@
           <bool name="use-id-prefix">0</bool>
           <bool name="use-id-suffix">0</bool>
           <long name="use-xrc">0</long>
+          <string name="variable-0">"dt|wxString|Dt|&quot;???&quot;|1|0|"</string>
           <long name="working-mode">0</long>
         </document>
         <document>
@@ -786,7 +787,6 @@
           <bool name="use-id-prefix">0</bool>
           <bool name="use-id-suffix">0</bool>
           <long name="use-xrc">0</long>
-          <string name="variable-0">"dt|wxString|Dt|&quot;???&quot;|1|0|Общая переменная для хранения пароля"</string>
           <long name="working-mode">0</long>
           <document>
             <string name="proxy-type">"wbBoxSizerProxy"</string>
@@ -1167,7 +1167,7 @@
               <long name="proxy-Id value">10003</long>
               <string name="proxy-Implementation filename">""</string>
               <string name="proxy-Label">"Password"</string>
-              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Member variable name">"_password"</string>
               <string name="proxy-Name">""</string>
               <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
               <bool name="proxy-Separate files">0</bool>
