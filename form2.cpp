@@ -38,7 +38,6 @@
 
 IMPLEMENT_CLASS(Form2, wxFrame)
 
-#include "dialogblocks_win2app.h"
 
 /*
  * Form2 event table definition
@@ -227,7 +226,7 @@ void Form2::OnBack(wxCommandEvent& event)
  // Кнопка выхода
 void Form2::OnExit(wxCommandEvent& event)
 {
-    wxGetApp().GetTopWindow()->Close(true); // Закрываем главное окно
+    wxTheApp->Exit(); // Закрываем приложение
 }
 
 
